@@ -1,0 +1,654 @@
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat Medium";
+    src: url(../fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Playfair Display Bold";
+    src: url(../fonts/playfair-display/PlayfairDisplay-Bold.otf);
+}
+
+:root {
+    --background: #FFFFFF;
+    --header: #FFFFFF;
+    --header-text: #CC0085;
+    --head-text: #FFFFFF;
+    --toggle-button: #FFFFFF;
+    --toggle-icon: #CC0085;
+    --square: #F4F2FF;
+    --icons: #CC0085;
+    --p: #CC0085;
+    --video-selected: #FFAFE3;
+    --video-collapsed: #EBEBEB;
+    --button: #CC0085;
+    --gradient-light: #FFAFE380;
+    --gradient-dark: #CC008580;
+    --h2-text: #CC0085;
+    --support-p2: #FFAFE3;
+    --support-square: #F4F2FF;
+    --support-button: #CC0085;
+    --button-footer: #FFFFFF;
+    --arrow: url(../img/arrowdown.svg);
+    --arrow-collapsed: url(../img/arrowright.svg);
+}
+
+[data-theme="dark"]{
+    --background: #000000;
+    --header: #1D00FF;
+    --header-text: #FFFFFF;
+    --head-text: #FFFFFF;
+    --toggle-button: #1D00FF;
+    --toggle-icon: #1D00FF;
+    --square: #1D00FF;
+    --icons: #FFFFFF;
+    --p: #FFFFFF;
+    --video-selected: #1D00FF;
+    --video-collapsed: #FFFFFF;
+    --button: #1D00FF;
+    --gradient-light: #D1E7FF80;
+    --gradient-dark: #1D00FF80;
+    --h2-text: #FFFFFF;
+    --support-p2: #0076FF;
+    --support-square: #1D00FF;
+    --support-button: #0076FF;
+    --button-footer: #1D00FF;
+    --arrow: url(../img/arrowdown-white.svg);
+    --arrow-collapsed: url(../img/arrowright-white.svg);
+}
+
+
+h1{
+    color: var(--head-text);
+    font-family: "Playfair Display Bold";
+    font-size: 60px;
+    line-height: 80px;
+}
+
+h2{
+    color: var(--head-text);
+    font-family: "Montserrat Bold";
+    font-size: 22px;
+    line-height: 27px;
+}
+
+h3{
+    color: var(--support-p2);
+    font-family: "Montserrat Bold";
+    font-size: 18px;
+}
+
+p{
+    font-size: 18px;
+    font-family: "Montserrat Bold";
+    line-height: 22px;
+    color: var(--p);
+}
+
+html{
+    background: var(--background);
+}
+
+html, body {
+    position: relative;
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    position: relative;
+    max-width: 1366px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+header{
+    height: 80vh;
+    width: 100%;
+    background-image:
+            linear-gradient(to bottom, var(--gradient-light), var(--gradient-dark)),
+            url("../img/daria-nepriakhina-736026-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#header-bar{
+    width: 80%;
+    height: 100px;
+    background-color: var(--header);
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 0px 0px 33px 33px;
+    position: fixed;
+    z-index: 3;
+}
+
+#header-logo{
+    margin-left: 5%;
+    padding-top: 25px;
+    width: 70px;
+    height: 70px;
+    background-color: var(--icons); /* defines the background color of the image */
+    mask: url("../img/logo.svg") no-repeat center / contain;
+    -webkit-mask: url("../img/logo.svg") no-repeat center;
+}
+
+ul{
+    text-align:center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul li{
+    display:inline;
+    color: var(--header-text);
+    font-family: Montserrat Bold;
+    margin: 40px;
+}
+
+#header-text{
+    width: 80%;
+    height: 100%;
+}
+
+header h1{
+    padding-top: 160px;
+    margin-left: 10%;
+}
+
+header h2{
+    margin-top: 58px;
+    margin-left: 10%;
+}
+
+/* The switch - the box around the slider */
+.theme-switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+}
+
+/* Hide default HTML checkbox */
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFAFE3;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--toggle-button);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #FFFFFF;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+#slider-sun{
+    width: 40%;
+    float: left;
+    margin-left: 3px;
+    margin-top: 5px;
+}
+#slider-moon{
+    width: 40%;
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#blocks{
+    width: 80%;
+    height: 384px;
+    display: block;
+    margin: 0 auto;
+    margin-top: -5%;
+}
+
+#block1{
+    width: 32.3%;
+    height: 100%;
+    background-color: var(--square);
+    float: left;
+    margin-right: 1.5%;
+    border-radius: 10px;
+}
+
+#img1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    background-color: var(--icons); /* defines the background color of the image */
+    mask: url("../img/leer.svg") no-repeat center / contain;
+    -webkit-mask: url("../img/leer.svg") no-repeat center;
+}
+
+#block1 p{
+    text-align: center;
+    margin-top: -40px;
+}
+
+#block2{
+    width: 32.3%;
+    height: 100%;
+    background-color: var(--square);
+    float: left;
+    margin-right: 1.5%;
+    border-radius: 10px;
+}
+
+#img2{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    background-color: var(--icons); /* defines the background color of the image */
+    mask: url("../img/codeer.svg") no-repeat center / contain;
+    -webkit-mask: url("../img/codeer.svg") no-repeat center;
+}
+
+#block2 p{
+    text-align: center;
+    margin-top: -40px;
+}
+
+#block3{
+    width: 32.3%;
+    height: 100%;
+    background-color: var(--square);
+    float: left;
+    border-radius: 10px;
+}
+
+#img3{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    background-color: var(--icons); /* defines the background color of the image */
+    mask: url("../img/speel.svg") no-repeat center / contain;
+    -webkit-mask: url("../img/speel.svg") no-repeat center;
+}
+
+#block3 p{
+    text-align: center;
+    margin-top: -40px;
+}
+
+#playlist{
+    margin-top: 5%;
+    width: 80%;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#playlist p{
+    margin-bottom: 28.5px;
+}
+
+.accordion-head p{
+    margin-left: 71px;
+    margin-top: 25.5px;
+}
+
+#accordion-title p{
+    margin-left: 0px;
+}
+
+.accordion-head{
+    height: 74px;
+}
+
+.ui-accordion-header-active{
+    border: 1px solid var(--video-selected);
+    background-image: var(--arrow);
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position-x: 10px;
+    background-position-y: 40%;
+}
+
+.ui-accordion-header-collapsed{
+    border: 1px solid var(--video-collapsed);
+    background-image: var(--arrow-collapsed);
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position-x: 10px;
+    background-position-y: 20px;
+}
+
+
+#support{
+    height: 187px;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 89px;
+}
+
+#support h2{
+    color: var(--h2-text);
+    margin-top: 30px;
+    width: 720px;
+    float: left;
+}
+
+#support button{
+    width: 271px;
+    height: 58px;
+    background-color: var(--button);
+    border-radius: 10px;
+    border-style: none;
+    color: #F4F2FF;
+    font-size: 22px;
+    font-family: "Montserrat Bold";
+    margin-top: 41.5px;
+}
+
+.swiper-container {
+    width: 100%;
+    float: right;
+}
+.swiper-slide {
+    height: 200px !important;
+    width: 400px !important;
+    background-color: var(--support-square);
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-wrapper{
+    margin-left: 10%;
+}
+
+.slide-image{
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.slide-image img{
+    border-radius: 50%;
+    width: 100%;
+    margin: 10%;
+}
+
+.slide-text{
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.slide-text p{
+    margin-top: 53px;
+    text-align: left;
+    margin-left: 32.3px;
+}
+
+
+.slide-text h3{
+    margin-top: 9px;
+    text-align: left;
+    margin-left: 32.3px;
+}
+
+.slide-button{
+    width: 109px;
+    height: 33px;
+    background-color: var(--support-button);
+    border-radius: 10px;
+    border-style: none;
+    color: #F4F2FF;
+    font-size: 18px;
+    font-family: "Montserrat Bold";
+    margin-top: 9.2px;
+    margin-left: -70px;
+}
+
+footer{
+    position: relative;
+    margin-top: 300px;
+    height: 450px;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    background-image:
+            linear-gradient(to bottom, var(--gradient-light), var(--gradient-dark)),
+            url("../img/footerimage.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+footer h1{
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+}
+
+footer h2{
+    font-family: "Montserrat Medium";
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+}
+
+footer button{
+    width: 271px;
+    height: 58px;
+    background-color: var(--button-footer);
+    border-radius: 10px;
+    border-style: none;
+    color: var(--h2-text);
+    font-size: 22px;
+    font-family: "Montserrat Bold";
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+}
+
+@media only screen and (max-width: 1430px) {
+
+    ul li{
+        margin: 10px;
+    }
+
+    h1{
+        font-size: 40px;
+    }
+
+    h2{
+        font-size: 18px;
+    }
+
+    footer{
+        margin-top: 250px;
+    }
+
+}
+
+
+@media only screen and (max-width: 1250px) {
+
+    .swiper-container{
+        margin-top: 100px;
+    }
+
+    footer{
+        margin-top: 350px;
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+    ul li{
+        font-size: 12px;
+    }
+
+    #header-bar{
+        width: 100%;
+    }
+
+    #block1{
+        height: 75%;
+    }
+
+    #block2{
+        height: 75%;
+    }
+
+    #block3{
+        height: 75%;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    #blocks{
+        width: 100%;
+    }
+
+    #playlist{
+        width: 95%;
+    }
+
+    #support{
+        margin-top: 30px;
+    }
+
+    #support h2{
+        width: 80%;
+    }
+
+    h1{
+        line-height: 40px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    h1{
+        line-height: 40px;
+        font-size: 30px;
+    }
+
+    #header h1{
+        margin-left: 0px;
+    }
+
+    #header h2{
+        margin-left: 0px;
+    }
+
+    h2{
+        font-size: 12px;
+    }
+
+    #block1{
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 10%;
+    }
+
+    #block2{
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 10%;
+    }
+
+    #block3{
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 10%;
+    }
+
+}

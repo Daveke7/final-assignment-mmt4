@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code 4 Kids - Homepage</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+        <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+        <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet" />
+        <link href="https://unpkg.com/@videojs/themes@1/dist/forest/index.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/video.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <div id="header-bar">
+                <div alt="" id="header-logo"></div>
+                <ul>
+                    <li>OVER ONS</li>
+                    <li>LESMATERIAAL</li>
+                    <li>CONTACT</li>
+                </ul>
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox">
+                    <span class="slider round">
+                        <img id="slider-moon" src="img/moon.svg" alt="">
+                        <img id="slider-sun" src="img/sun.svg" alt="">
+                    </span>
+                </label>
+            </div>
+            <div id="header-text">
+                <h1>Van beginner naar expert <br> Het lesmateriaal brengt je verder</h1>
+                <h2>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</h2>
+            </div>
+        </header>
+        <main>
+            <section id="blocks">
+                <div id="block1">
+                    <div id="img1" alt=""></div>
+                    <p>Leer</p>
+                </div>
+                <div id="block2">
+                    <div id="img2" alt=""></div>
+                    <p>Codeer</p>
+                </div>
+                <div id="block3">
+                    <div id="img3" alt=""></div>
+                    <p>Speel</p>
+                </div>
+            </section>
+            <section id="playlist">
+                <p>Playlist</p>
+                <div id="accordion">
+                    <div class="accordion-head">
+                        <p>Algemene introductie</p>
+                    </div>
+                    <div class="video-wrapper">
+                        <video  width="1088" id='video1' class='video-js' data-setup='{"fluid": true}'>
+                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type=video/mp4>
+                        </video>
+                        <div class="controls">
+                            <button class='rewind'></button>
+                            <button class='play toggle'></button>
+                            <button class='forward'></button>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="accordion-head">
+                        <p>Workshop 1: Kleuren met code</p>
+                    </div>
+                    <div class="video-wrapper">
+                        <video width="1088" id='video2' class='video-js' data-setup='{"fluid": true}'>
+                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type=video/mp4>
+                        </video>
+                        <div class="controls">
+                            <button class='rewind'></button>
+                            <button class='play toggle'></button>
+                            <button class='forward'></button>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="accordion-head">
+                        <p>Workshop 2: Vormen maken</p>
+                    </div>
+                    <div class="video-wrapper">
+                        <video width="1088" id='video3' class='video-js' data-setup='{"fluid": true}'>
+                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type=video/mp4>
+                        </video>
+                        <div class="controls">
+                            <button class='rewind'></button>
+                            <button class='play toggle'></button>
+                            <button class='forward'></button>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="accordion-head">
+                        <p>Workshop 3: Beweging</p>
+                    </div>
+                    <div class="video-wrapper">
+                        <video width="1088" id='video4' class='video-js' data-setup='{"fluid": true}'>
+                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type=video/mp4>
+                        </video>
+                        <div class="controls">
+                            <button class='rewind'></button>
+                            <button class='play toggle'></button>
+                            <button class='forward'></button>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="accordion-head">
+                        <p>Workshop 4: Variabelen gebruiken</p>
+                    </div>
+                    <div class="video-wrapper">
+                        <video width="1088" id='video5' class='video-js' data-setup='{"fluid": true}'>
+                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type=video/mp4>
+                        </video>
+                        <div class="controls">
+                            <button class='rewind'></button>
+                            <button class='play toggle'></button>
+                            <button class='forward'></button>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </section>
+            <div id="support">
+                <p>support</p>
+                <h2>Onze studenten staan voor je klaar. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. </h2>
+                <button>NAAR CONTACT</button>
+            </div>
+        </main>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-image">
+                        <img src="img/alina-kovalchuk-1143928-unsplash.jpg" alt="">
+                    </div>
+                    <div class="slide-text">
+                        <p>Alina kovalchuk</p>
+                        <h3 class="support-title">Hoofd support</h3>
+                        <button class="slide-button">Mail</button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-image">
+                        <img src="img/giorgio-encinas-781653-unsplash.jpg" alt="">
+                    </div>
+                    <div class="slide-text">
+                        <p>Gorgie Encinas</p>
+                        <h3 class="support-title">Hoofd support</h3>
+                        <button class="slide-button">Mail</button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-image">
+                        <img src="img/kal-visuals-592091-unsplash.jpg" alt="">
+                    </div>
+                    <div class="slide-text">
+                        <p>Kal Visuals</p>
+                        <h3 class="support-title">Hoofd support</h3>
+                        <button class="slide-button">Mail</button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-image">
+                        <img src="img/norman-toth-177973-unsplash.jpg" alt="">
+                    </div>
+                    <div class="slide-text">
+                        <p>Norman Toth</p>
+                        <h3 class="support-title">Hoofd support</h3>
+                        <button class="slide-button">Mail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1 class="ml4">
+                    <span class="letters letters-1">Ready</span>
+                    <span class="letters letters-2">Set</span>
+                    <span class="letters letters-3">Vacation!</span>
+                </h1>
+            </div>
+        </div>
+        <footer>
+            <h1>Klaar voor de <br> volgende uitdaging?</h1>
+            <h2>In ons expertprogramma vind je lessen voor gevorderden </h2>
+            <button>KOM MAAR OP</button>
+        </footer>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://vjs.zencdn.net/7.8.2/video.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/video.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</html>
